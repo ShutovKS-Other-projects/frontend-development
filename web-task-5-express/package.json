@@ -1,0 +1,16 @@
+{
+  "name": "web-task-5-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "fs": "^0.0.1-security",
+    "morgan": "~1.9.1"
+  }
+}
