@@ -1,0 +1,19 @@
+﻿<%- include('partials/header', { title: 'Добавить товар' }) %>
+<form action="/add_info" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label class="form-label">Название</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Цена</label>
+        <input type="number" name="price" step="0.01" class="form-control" required>
+    </div>
+    <div class="col-12">
+        <label class="form-label">Описание</label>
+        <textarea name="description" class="form-control"></textarea>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+<%- include('partials/footer') %>

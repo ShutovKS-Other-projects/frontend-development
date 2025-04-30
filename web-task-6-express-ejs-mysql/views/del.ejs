@@ -1,0 +1,38 @@
+﻿<%- include('partials/header', { title: 'Удалить товар' }) %>
+<form id="delForm" action="/del/<%= products.length ? products[0].id : '' %>" method="post" class="row g-3 mb-4">
+    <div class="col-auto">
+        <label class="form-label">Товар</label>
+        <select name="id" id="prodSelect" class="form-select"
+                onchange="delForm.action='/del/'+this.value">
+            <% products.forEach(p=>{ %>
+            <option value="<%= p.id %>"><%= p.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="col-auto align-self-end">
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </div>
+</form>
+
+<h3>Все товары</h3>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Цена</th>
+        <th>Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% products.forEach(p=>{ %>
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.name %></td>
+        <td><%= p.price %></td>
+        <td><%= p.description %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+<%- include('partials/footer') %>
